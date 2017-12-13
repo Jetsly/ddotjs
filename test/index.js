@@ -1,7 +1,7 @@
-"use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
+﻿"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(require("./utils/is"));
+var is = require("./utils/is");
+exports.is = is;
+var com = require("./utils/com");
+exports.com = com;
 //# sourceMappingURL=index.js.map

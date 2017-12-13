@@ -1,8 +1,13 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es2015",
-        "outDir":"lib"
+        "module": "ES6", //模块是es6
+        "target": "ES5", //代码是es5
+        "outDir":"lib",
+        "emitBOM": true,
+        "experimentalDecorators": true,
+        "moduleResolution":"node",
+        "pretty": true,
+        "declaration":true
     },
     "include": [
         "src/**/*.ts"

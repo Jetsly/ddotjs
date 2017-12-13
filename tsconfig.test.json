@@ -1,6 +1,9 @@
 {
     "extends": "./tsconfig.base",
     "compilerOptions":{
-        "sourceMap": true
+        "module": "commonjs", 
+        "sourceMap": true,
+        "skipLibCheck":true,
+        "outDir": "test"
     }
 }
