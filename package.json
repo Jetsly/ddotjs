@@ -1,0 +1,32 @@
+{
+  "name": "ddot",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "tslint \"src/**/*.ts\" --force",
+    "build": "rimraf lib && tsc -p tsconfig.prod.json",
+    "test": "rimraf test && tsc -p tsconfig.test.json --outDir test   && ava **/__tests__/**/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jetsly/ddot.git"
+  },
+  "keywords": [
+    "ddot",
+    "tools",
+    "is"
+  ],
+  "author": "jetsly@live.cn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jetsly/ddot/issues"
+  },
+  "homepage": "https://github.com/Jetsly/ddot#readme",
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.base",
+    "compilerOptions": {
+        "declaration":true
+    },
+    "exclude": [
+        "node_modules",
+        "src/**/*.spec.ts"
+    ]
+}
