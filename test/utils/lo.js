@@ -32,4 +32,4 @@ exports.cookie = function (obj) {
     document.cookie = name + "=" + escape(value) + ";domain=" + domain + ";path=/;" + expireStr;
     return exports.cookie();
 };
-//# sourceMappingURL=com.js.map
+//# sourceMappingURL=lo.js.map

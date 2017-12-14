@@ -1,5 +1,5 @@
 import { JSDOM } from 'jsdom'
-import * as com from '../com'
+import * as com from '../lo'
 import test from 'ava'
 
 const lo = url => {

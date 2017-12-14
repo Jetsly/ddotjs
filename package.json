@@ -1,6 +1,6 @@
 {
   "name": "ddot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "unpkg": "dist/index.min.js",
   "jsdelivr": "dist/index.min.js",
@@ -14,7 +14,8 @@
     "build:ts": "tsc -p tsconfig.prod.json",
     "build:rollup": "rollup -c",
     "build": "npm run clean && run-p build:**",
-    "test": "rimraf test && tsc -p tsconfig.test.json && ava"
+    "test": "rimraf test && tsc -p tsconfig.test.json && ava",
+    "prepublish": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",
