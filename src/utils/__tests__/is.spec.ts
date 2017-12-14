@@ -1,47 +1,39 @@
-import test from 'ava'
+const assert = chai.assert
 import * as is from '../is'
-
-test('is func', (t) => {
-  t.plan(5)
-  t.true(is.func((() => ({}))))
-  t.false(is.func({}))
-  t.false(is.func(1))
-  t.false(is.func('1111'))
-  t.false(is.func([]))
-})
-
-test('is number', (t) => {
-  t.plan(5)
-  t.false(is.num(() => ({})))
-  t.false(is.num({}))
-  t.true(is.num(1))
-  t.false(is.num('1111'))
-  t.false(is.num([]))
-})
-
-test('is string', (t) => {
-  t.plan(5)
-  t.false(is.str(() => ({})))
-  t.false(is.str({}))
-  t.false(is.str(1))
-  t.true(is.str('1111'))
-  t.false(is.str([]))
-})
-
-test('is array', (t) => {
-  t.plan(5)
-  t.false(is.arr(() => ({})))
-  t.false(is.arr({}))
-  t.false(is.arr(1))
-  t.false(is.arr('1111'))
-  t.true(is.arr([]))
-})
-
-test('is obj', (t) => {
-  t.plan(5)
-  t.false(is.obj(() => ({})))
-  t.true(is.obj({}))
-  t.false(is.obj(1))
-  t.false(is.obj('1111'))
-  t.false(is.obj([]))
+describe('is', () => {
+  it('is func', () => {
+    assert.isTrue(is.func((() => ({}))))
+    assert.isFalse(is.func({}))
+    assert.isFalse(is.func(1))
+    assert.isFalse(is.func('1111'))
+    assert.isFalse(is.func([]))
+  })
+  it('is number', () => {
+    assert.isFalse(is.num((() => ({}))))
+    assert.isFalse(is.num({}))
+    assert.isTrue(is.num(1))
+    assert.isFalse(is.num('1111'))
+    assert.isFalse(is.num([]))
+  })
+  it('is string', () => {
+    assert.isFalse(is.str((() => ({}))))
+    assert.isFalse(is.str({}))
+    assert.isFalse(is.str(1))
+    assert.isTrue(is.str('1111'))
+    assert.isFalse(is.str([]))
+  })
+  it('is array', () => {
+    assert.isFalse(is.arr((() => ({}))))
+    assert.isFalse(is.arr({}))
+    assert.isFalse(is.arr(1))
+    assert.isFalse(is.arr('1111'))
+    assert.isTrue(is.arr([]))
+  })
+  it('is obj', () => {
+    assert.isFalse(is.obj((() => ({}))))
+    assert.isTrue(is.obj({}))
+    assert.isFalse(is.obj(1))
+    assert.isFalse(is.obj('1111'))
+    assert.isFalse(is.obj([]))
+  })
 })

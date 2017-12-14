@@ -14,7 +14,7 @@
     "build:ts": "tsc -p tsconfig.prod.json",
     "build:rollup": "rollup -c",
     "build": "npm run clean && run-p build:**",
-    "test": "rimraf test && tsc -p tsconfig.test.json && ava",
+    "test": "karma start",
     "prepublish": "npm run test && npm run build"
   },
   "repository": {
@@ -24,13 +24,9 @@
   "keywords": [
     "ddot",
     "tools",
-    "is"
+    "is",
+    "lo"
   ],
-  "ava": {
-    "files": [
-      "**/__tests__/**/*.spec.js"
-    ]
-  },
   "author": "jetsly@live.cn",
   "license": "MIT",
   "bugs": {
@@ -38,8 +34,16 @@
   },
   "homepage": "https://github.com/Jetsly/ddot#readme",
   "devDependencies": {
-    "ava": "^0.24.0",
-    "jsdom": "^11.5.1",
+    "@types/chai": "^4.0.10",
+    "@types/es6-promise": "0.0.33",
+    "@types/mocha": "^2.2.44",
+    "@types/node": "^8.5.1",
+    "chai": "^4.1.2",
+    "karma": "^1.7.1",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-typescript": "^3.0.8",
+    "mocha": "^4.0.1",
     "npm-run-all": "^4.1.2",
     "rimraf": "^2.6.2",
     "rollup": "^0.52.1",

@@ -1,7 +1,8 @@
+.DS_Store
 /src
 /test
+karma.conf.ts
 rollup.config.js
 tsconfig.base.json
 tsconfig.prod.json
-tsconfig.test.json
 tslint.json

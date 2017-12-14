@@ -1,13 +1,16 @@
 {
     "compilerOptions": {
-        "module": "ES6", //模块是es6
-        "target": "ES5", //代码是es5
+        "module": "ES6", 
+        "target": "ES5", 
         "outDir":"lib",
         "emitBOM": true,
         "experimentalDecorators": true,
         "moduleResolution":"node",
         "pretty": true,
-        "declaration":true
+        "declaration":true,
+        "typeRoots": [
+          "../node_modules/@types/"
+        ]
     },
     "include": [
         "src/**/*.ts"

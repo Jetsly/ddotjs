@@ -3,7 +3,8 @@
 ```js
 import { 
     is,
-    com
+    lo,
+    cvs
 } from 'ddot'
 ```
 

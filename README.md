@@ -17,21 +17,8 @@ Lightweight tools framework
 
 ### Install
 ```bash
-$ git clone https://github.com/Jetsly/ddot.git
+$ npm run ddot -S
 ```
-###  Build
-```bash
-$ npm run build
-```
-### Lint
-```bash
-$ npm run lint
-```
-### Test
-```bash
-$ npm test
-```
-
 ### Docs
 
 * [ddot APIs](https://github.com/Jetsly/ddot/blob/master/docs/API.md)
