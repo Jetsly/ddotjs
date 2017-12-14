@@ -1,7 +1,7 @@
 ﻿"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var jsdom_1 = require("jsdom");
-var com = require("../com");
+var com = require("../lo");
 var ava_1 = require("ava");
 var lo = function (url) {
     var window = new jsdom_1.JSDOM('', { url: url }).window;
@@ -36,4 +36,4 @@ ava_1.default('cookie', function (t) {
         world: 'hello'
     });
 });
-//# sourceMappingURL=com.spec.js.map
+//# sourceMappingURL=lo.spec.js.map
