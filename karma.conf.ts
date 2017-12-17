@@ -1,3 +1,15 @@
+
+let reporters = ['mocha','coverage']
+let coverageReporter = {
+  type: 'html' ,
+  dir: 'test/coverage'
+}
+
+if (process.env.TRAVIS) {
+  coverageReporter.type = 'lcov'
+  reporters.push('coveralls')
+}
+
 module.exports = (config) => {
   config.set({
     frameworks: ['mocha', 'chai', 'karma-typescript'],
@@ -12,10 +24,8 @@ module.exports = (config) => {
         target: 'ES6'
       }
     },
-    coverageReporter: {
-      type: 'html',
-      dir: 'test/coverage/'
-    },
+    reporters,
+    coverageReporter,
     customLaunchers: {
       Chrome_travis_ci: {
         base: 'Chrome',
