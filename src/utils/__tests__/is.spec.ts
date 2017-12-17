@@ -1,39 +1,29 @@
 const assert = chai.assert
 import * as is from '../is'
+
+const typeCheck = (idx,func) => {
+  [ null , () => ({}) , 1 , '111' , [] , {} , false , undefined ].forEach((type,_idx) => {
+    (_idx === idx ? assert.isTrue : assert.isFalse)(func(type),`paramIdx: ${_idx} param ${type}`)
+  })
+}
+
+const instanceCheck = (idx,func) => {
+  [ Promise.resolve() , function* () { console.log(1) } ].forEach((type,_idx) => {
+    (_idx === idx ? assert.isTrue : assert.isFalse)(func(type),`paramIdx: ${_idx} param ${type}`)
+  })
+}
 describe('is', () => {
-  it('is func', () => {
-    assert.isTrue(is.func((() => ({}))))
-    assert.isFalse(is.func({}))
-    assert.isFalse(is.func(1))
-    assert.isFalse(is.func('1111'))
-    assert.isFalse(is.func([]))
+  it('is func', () => typeCheck(1,is.func))
+  it('is number', () => typeCheck(2,is.num))
+  it('is string', () => typeCheck(3,is.str))
+  it('is array', () => typeCheck(4,is.arr))
+  it('is obj', () => typeCheck(5,is.obj))
+  it('is bool', () => typeCheck(6,is.bool))
+  it('is symbol', () => {
+    typeCheck(-1,is.symbol)
+    assert.isTrue(is.symbol(Symbol('aa')))
   })
-  it('is number', () => {
-    assert.isFalse(is.num((() => ({}))))
-    assert.isFalse(is.num({}))
-    assert.isTrue(is.num(1))
-    assert.isFalse(is.num('1111'))
-    assert.isFalse(is.num([]))
-  })
-  it('is string', () => {
-    assert.isFalse(is.str((() => ({}))))
-    assert.isFalse(is.str({}))
-    assert.isFalse(is.str(1))
-    assert.isTrue(is.str('1111'))
-    assert.isFalse(is.str([]))
-  })
-  it('is array', () => {
-    assert.isFalse(is.arr((() => ({}))))
-    assert.isFalse(is.arr({}))
-    assert.isFalse(is.arr(1))
-    assert.isFalse(is.arr('1111'))
-    assert.isTrue(is.arr([]))
-  })
-  it('is obj', () => {
-    assert.isFalse(is.obj((() => ({}))))
-    assert.isTrue(is.obj({}))
-    assert.isFalse(is.obj(1))
-    assert.isFalse(is.obj('1111'))
-    assert.isFalse(is.obj([]))
-  })
+
+  it('is promise',() => instanceCheck(0,is.promise))
+  it('is generator',() => instanceCheck(1,is.generator))
 })

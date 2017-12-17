@@ -7,9 +7,20 @@ module.exports = (config) => {
     preprocessors: {
       '**/*.ts': ['karma-typescript']
     },
+    karmaTypescriptConfig: {
+      compilerOptions: {
+        target: 'ES6'
+      }
+    },
     coverageReporter: {
       type: 'html',
       dir: 'test/coverage/'
+    },
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
     }
   })
 }

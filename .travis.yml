@@ -1,7 +1,18 @@
-language: node_js
+sudo: required  
+dist: trusty  
+language: node_js  
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 node_js:
-  - '6'
-  - '5'
-  - '4'
-  - '0.12'
-  - '0.10'
+  - 'node'
+cache:
+  directories:
+    - "node_modules"  
+script: karma start --single-run --browsers Chrome_travis_ci    
+before_install:  
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
