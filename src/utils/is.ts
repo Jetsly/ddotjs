@@ -51,3 +51,9 @@ export const promise = val => val instanceof Promise
  * @param val
  */
 export const generator = val => val && val.constructor && val.constructor.name === 'GeneratorFunction'
+
+/**
+ * 判断对象是不是非 null | undefined
+ * @param val
+ */
+export const vaild = val => !(val === undefined || val === null)

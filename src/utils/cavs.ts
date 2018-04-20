@@ -3,7 +3,7 @@
  * 修正请求地址
  * @param url 地址
  */
-function fixAchor (url) {
+export function fixAchor (url) {
   const anchor = document.createElement('a')
   anchor.href = url
   anchor.href.replace(/https?:/,location.protocol)
