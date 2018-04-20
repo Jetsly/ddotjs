@@ -18,9 +18,6 @@ Lightweight tools framework
 ```bash
 $ npm run ddot -S
 ```
-### Docs
-
-* [ddot APIs](https://github.com/Jetsly/ddot/blob/master/docs/API.md)
 
 ## Commit
 An [emoji](https://www.webpagefx.com/tools/emoji-cheat-sheet/) guide for your commit messages
