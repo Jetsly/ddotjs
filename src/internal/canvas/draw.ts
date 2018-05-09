@@ -1,38 +1,6 @@
 import { preloadImg } from './cavs'
 import { str,obj } from '../is'
 /**
- * 图片画贴纸点位
- * @param canvas
- * @param pasters 贴纸数组
- * @param faceInfo 点位信息
- * @param faceIdx 脸索引
- * @param ratio
- */
-export function pointsPaster (canvas: HTMLCanvasElement,pasters,faceInfo,faceIdx= 0,ratio= 1.4) {
-  let ctx = canvas.getContext('2d')
-  const pointCountperFace = 52
-  return Promise.all(pasters.map(paster => preloadImg(paster.url))).then(pasterImgs => {
-    pasterImgs.forEach((pasterImg: HTMLImageElement,idx) => {
-      ctx.save()
-      const paster = pasters[idx]
-      const point = faceInfo.point.slice((pointCountperFace * faceIdx) + (+paster.point * 2))
-      const [x, y] = [point[0], point[1]]
-      const rotate = paster.rotate + faceInfo.rotate[faceIdx]
-      const scale = paster.scale * Math.abs(faceInfo.size[faceIdx]) * ratio
-      ctx.translate(x, y)
-      ctx.scale(paster.sw * scale, paster.sh * scale)
-      ctx.rotate((rotate * Math.PI) / 180)
-      ctx.drawImage(
-        pasterImg, 0, 0, paster.w, paster.h,
-        -1 * paster.alignx, -1 * paster.aligny, paster.w, paster.h
-      )
-      ctx.restore()
-    })
-    return canvas
-  })
-}
-
-/**
  * 画图
  * @param imgInfo 画布信息
  * @param imgs 图片数组 [url|canvas] 2选1
