@@ -35,6 +35,12 @@ export const arr = val => Array.isArray(val)
 export const bool = val => typeof val === 'boolean'
 
 /**
+ * 判断对象是不是非 null | undefined
+ * @param val
+ */
+export const vaild = val => !(val === undefined || val === null)
+
+/**
  * 判断是不是唯一的
  * @param val
  */
@@ -51,9 +57,3 @@ export const promise = val => val instanceof Promise
  * @param val
  */
 export const generator = val => val && val.constructor && val.constructor.name === 'GeneratorFunction'
-
-/**
- * 判断对象是不是非 null | undefined
- * @param val
- */
-export const vaild = val => !(val === undefined || val === null)

@@ -1,6 +1,6 @@
 const assert = chai.assert
-import * as http from '../http'
-import * as fetchMock from 'fetch-mock/es5/client'
+import * as http from '../net/http'
+let fetchMock = require('fetch-mock')
 const json = data => ({
   sendAsJson: true,
   headers: {

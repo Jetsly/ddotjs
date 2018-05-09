@@ -1,5 +1,5 @@
-import * as is from './is'
-import { fixAchor } from './cavs'
+import * as is from '../is'
+import { fixAchor } from '../canvas/cavs'
 
 /**
  * 构建参数
